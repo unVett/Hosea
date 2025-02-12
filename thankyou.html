@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yay! 🎉</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.1"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Courier';
+            background-color: #FFF5E4;
+            color: #FF9494;
+        }
+        h1 {
+            font-size: 50px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>yaaaaay! happy Valentines babyy! </h1>
+    <img src="qoobee-happy.gif" alt="Happy GIF">
+    <img src="qoobee-wink.webp" alt="Happy GIF">
+    <img src="sunday-flower.gif" alt="Happy GIF">    
+
+    <script>
+        function launchConfetti() {
+            confetti({
+                particleCount: 200,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+        setTimeout(launchConfetti, 500);
+    </script>
+</body>
+</html>
