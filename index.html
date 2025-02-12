@@ -35,18 +35,39 @@
     <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
     <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
     <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
-    <button class="answerButton" id="noButton">I no no wanna o plsssss</button>
+    <button class="answerButton" id="noButton">plsss no noooo dont</button>
     <br>
     <img src="qoobee-miss-you.webp" alt="Animated GIF">
     <img src="cute-dragon-i-gottta-go.webp" alt="Animated GIF">
     <br />
 
     <script>
-        document.getElementById('noButton').addEventListener('click', function() {
-            var yesButton = document.querySelector('button[onclick*="thankyou.html"]');
-            var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
-            yesButton.style.fontSize = (currentFontSize + 10) + 'px'; // Increase font size by 10px
+    let clickCount = 0; // Track "No" button clicks
+    document.getElementById('noButton').addEventListener('click', function() {
+        let question = document.getElementById('valentineQuestion');
+        let yesButtons = document.querySelectorAll('button[onclick*="thankyou.html"]');
+
+        // Change text step by step
+        if (clickCount === 0) {
+            question.innerHTML = "r u really really sure?";
+        } else if (clickCount === 1) {
+            question.innerHTML = "if u say no, i will be very sad";
+        } else if (clickCount === 2) {
+            question.innerHTML = "i will be very sad...";
+        } else if (clickCount === 3) {
+            question.innerHTML = "im gonna cryyy";
+        }
+
+        // Increase Yes button size every time "No" is clicked
+        yesButtons.forEach(button => {
+            let currentSize = parseInt(window.getComputedStyle(button).fontSize);
+            button.style.fontSize = (currentSize + 40) + "px"; // Increase font size by 10px
         });
-    </script>
+
+        clickCount++; // Increase the counter every click
+    });
+</script>
+
+    
 </body>
 </html>
